@@ -1,0 +1,93 @@
+---
+import { Clients} from '@/components/clients';
+import LogoImage from '@/assets/images/logo.png';
+import { Image } from 'astro:assets';
+
+import FB from "@/assets/images/socials/fb.png";
+import IG from "@/assets/images/socials/ig.png";
+import Threads from "@/assets/images/socials/threads.png";
+import Tiktok from "@/assets/images/socials/tiktok.png";
+
+
+import { contacts } from '@/config/site';
+
+
+export const socials = [
+  {
+    alt: "Instagram",
+    href: contacts.instagram,
+    src: IG,
+  },
+  {
+    alt: "Facebook",
+    href: contacts.facebook,
+    src: FB,
+  },
+  {
+    alt: "Threads",
+    href: contacts.threads,
+    src: Threads,
+  },
+  {
+    alt: "Tiktok",
+    href: contacts.tiktok,
+    src: Tiktok,
+  },
+];
+
+---
+<footer class="container py-10">
+  <section class="grid grid-cols-3">
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-y-4 md:flex-row md:gap-x-10">
+        <a
+          href="/"
+          class="mr-6 font-gta text-xs font-medium uppercase text-black md:text-sm"
+        >
+          About
+        </a>
+        <a
+          href="/"
+          class="cursor-not-allowed font-gta text-xs font-medium uppercase text-black md:text-sm"
+        >
+          Magazine 🔒
+        </a>
+      </div>
+      <a
+        href="/"
+        class="font-gta text-xs font-medium uppercase text-black md:text-sm"
+      >
+        Contact
+      </a>
+    </div>
+    <div class="flex justify-center">
+      <Image
+        src={LogoImage}
+        alt="TWC Logo"
+        width={140}
+        height={140}
+      />
+    </div>
+    <div class="flex items-start justify-end">
+      <Clients client:load>
+    </div>
+  </section>
+
+  <section class="mt-10 flex flex-col items-center justify-between gap-4 md:flex-row">
+    <p class="flex-1 font-gta text-xs font-light md:text-sm">
+      © TWC your friendly Vietnamese Agency Since 2022 ✷
+    </p>
+    <ul class="flex gap-8">
+      {socials.map((social, idx) => (
+        <li class="relative size-[16px] md:size-[24px]">
+          <a href={social.href} target="_blank">
+            <Image
+              alt={social.alt}
+              src={social.src}
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</footer>
