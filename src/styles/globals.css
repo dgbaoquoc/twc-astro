@@ -34,4 +34,103 @@
 
     --radius: 0.5rem;
   }
+
+  @font-face {
+    font-family: "GTA";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("/fonts/GTAmericaLCG-ExpRg.otf") format("otf");
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpBd.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpBdIt.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpBl.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpBlIt.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpMd.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpMdIt.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpRg.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpRgIt.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpLt.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GT America";
+    src: url("/fonts/GTAmericaLCG-ExpLtIt.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Epilogue";
+    src: url("/fonts/Epilogue-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Epilogue";
+    src: url("/fonts/Epilogue-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Epilogue";
+    src: url("/fonts/Epilogue-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
 }
