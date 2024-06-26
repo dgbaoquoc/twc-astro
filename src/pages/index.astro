@@ -3,6 +3,8 @@ import LogoImage from '@/assets/images/logo.png';
 import Project1 from '@/assets/images/projects/project-1.webp';
 import Project2 from '@/assets/images/projects/project-2.webp';
 import Project3 from '@/assets/images/projects/project-3.webp';
+import VietnamImage from '@/assets/images/vietnam.png';
+import ContactForm from '@/components/contact-form';
 import { BikiniCatSVG, EyeSVG, SolutionSVG } from '@/components/icons';
 import Marquee from '@/components/marquee';
 import { siteConfig } from '@/config/site';
@@ -46,10 +48,10 @@ const projects = [
 
 		<section class="relative grid place-items-center gap-y-10 py-10 lg:grid-cols-2 lg:py-[120px]">
 			<div class="relative space-y-2 transition hover:scale-110 lg:hover:scale-125">
-				<h1 class="font-gta text-[35px]  font-bold lg:text-[50px]">
+				<h1 class="font-gta text-[35px] font-bold lg:text-[50px]">
 					MEDIA
 				</h1>
-				<EyeSVG className="absolute -top-4 right-[20%]" />
+				<EyeSVG className="absolute -top-4 right-[18%]" />
 				<SolutionSVG className="mx-auto" />
 			</div>
 			<div class="relative space-y-2 transition hover:scale-110 lg:hover:scale-125">
@@ -135,6 +137,31 @@ const projects = [
               {/*/Portfolio Wrap */}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="contact-form">
+        <div class="relative mx-auto flex max-w-screen-xl flex-col gap-y-10 px-4 py-10"
+        style="background-image: url('src/assets/images/vietnam.png');
+        background-position: center;
+        background-repeat: no-repeat;
+          background-size: contain;
+          opacity: 0.8;">
+          <div>
+            <h3 class="text-[24px] uppercase">
+              Let&apos;s conquer
+              <br />
+              <span
+                style={{
+                  fontFamily: "Epilogue",
+                  fontWeight: 800,
+                }}
+              >
+                Vietnam market <br /> together
+              </span>
+            </h3>
+          </div>
+          <ContactForm />
         </div>
       </section>
 
