@@ -105,7 +105,7 @@ export default function ContactForm() {
   }
 
   useEffect(() => {
-    if (form.formState.isSubmitted) {
+    if (form.formState.isSubmitSuccessful) {
       setIsSubmitted(true);
       form.reset({
         firstName: "",
@@ -262,7 +262,7 @@ export default function ContactForm() {
           )}
         />
         {isSubmitted ? (
-          <p className="text-right text-sm">
+          <p className="text-right text-sm col-span-2">
             Thank you for your message. We will get back to you shortly.
           </p>
         ) : (
