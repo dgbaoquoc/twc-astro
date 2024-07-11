@@ -11,6 +11,9 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import * as React from "react";
+import { render } from "@react-email/render";
+import { ThanksEmail } from "./email-template";
 
 const contactSchema = z.object({
   firstName: z
@@ -54,6 +57,7 @@ const contactSchema = z.object({
 });
 
 export default function ContactForm() {
+  const [isPending, startTranstion] = React.useTransition();
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -62,7 +66,49 @@ export default function ContactForm() {
   });
 
   function onSubmit(data: z.infer<typeof contactSchema>) {
-    alert(JSON.stringify(data, null, 2));
+    startTranstion(async () => {
+      try {
+        const html = render(
+          <ThanksEmail name={`${data.firstName} ${data.lastName}`} />
+        );
+        await fetch("/api/sendEmail.json", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            to: data.email,
+            html,
+          }),
+        });
+
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbySfN8JLVKV2-KNvoh0gyqenDoVA2wpm5OL3EM1Ni7kt8mn0p5dbcPhhdPuUhS7--vFJA/exec",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              companyName: data.company,
+              representer: data.email,
+              title: data.title,
+              region: data.region,
+              enquiryType: data.category,
+              stage: "Prospect",
+              estValue: "0.00",
+              relationshipOwner: "N/A",
+              probability: 0,
+              notes: data.message,
+            }),
+          }
+        );
+
+        form.reset();
+      } catch (error) {
+        console.log(error);
+      }
+    });
   }
 
   return (
@@ -208,6 +254,7 @@ export default function ContactForm() {
         />
         <Button
           type="submit"
+          disabled={isPending}
           className="col-span-2 ml-auto rounded-3xl border-2 border-slate-800 bg-transparent
         "
         >
