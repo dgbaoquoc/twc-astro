@@ -25,8 +25,9 @@ export const ThanksEmail = ({ name }: ThanksEmailProps) => (
           width={140}
           height={140}
         />
-        <Text style={paragraph}>Welcome {name},</Text>
-        <br />
+        <Text style={paragraph}>
+          Welcome <strong>{name}</strong>,
+        </Text>
         <Text style={paragraph}>
           Thank you for giving us this opportunity. We will get back to you
           shortly.

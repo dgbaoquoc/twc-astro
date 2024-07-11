@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { render } from "@react-email/render";
 import { z } from "astro/zod";
-import { useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { ThanksEmail } from "./email-template";
 
@@ -57,13 +57,14 @@ const contactSchema = z.object({
 });
 
 export default function ContactForm() {
-  const [isPending, startTranstion] = useTransition();
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       category: "",
     },
   });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   function onSubmit(data: z.infer<typeof contactSchema>) {
     const html = render(
@@ -85,7 +86,7 @@ export default function ContactForm() {
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "text/plain",
         },
         body: JSON.stringify({
           companyName: data.company,
@@ -101,9 +102,23 @@ export default function ContactForm() {
         }),
       }
     );
-
-    form.reset();
   }
+
+  useEffect(() => {
+    if (form.formState.isSubmitted) {
+      setIsSubmitted(true);
+      form.reset({
+        firstName: "",
+        lastName: "",
+        company: "",
+        title: "",
+        email: "",
+        region: "",
+        category: "",
+        message: "",
+      });
+    }
+  }, [form.formState, form.reset]);
 
   return (
     <Form {...form}>
@@ -246,14 +261,19 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          disabled={isPending}
-          className="col-span-2 ml-auto rounded-3xl border-2 border-slate-800 bg-transparent
-        "
-        >
-          Send Message
-        </Button>
+        {isSubmitted ? (
+          <p className="text-right text-sm">
+            Thank you for your message. We will get back to you shortly.
+          </p>
+        ) : (
+          <Button
+            type="submit"
+            className="col-span-2 ml-auto rounded-3xl border-2 border-slate-800 bg-transparent
+      "
+          >
+            Send Message
+          </Button>
+        )}
       </form>
     </Form>
   );
