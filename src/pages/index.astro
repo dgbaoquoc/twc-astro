@@ -3,6 +3,7 @@ import LogoImage from '@/assets/images/logo.png';
 import Project1 from '@/assets/images/projects/project-1.webp';
 import Project2 from '@/assets/images/projects/project-2.webp';
 import Project3 from '@/assets/images/projects/project-3.webp';
+import Spline from '@/components/Spline.astro';
 import ContactForm from '@/components/contact-form';
 import { BikiniCatSVG, EyeSVG, SolutionSVG } from '@/components/icons';
 import Marquee from '@/components/marquee';
@@ -139,6 +140,33 @@ const projects = [
         </div>
       </section>
 
+      <section class="flex-grid my-10 lg:my-0 mx-auto relative aspect-[0.8] max-h-[80vh] animate-fade-up px-10 lg:aspect-[4]">
+        <Spline />
+        <div class="absolute bottom-[2rem] left-[10%] translate-x-[16%] transform lg:left-[50%] lg:right-[15%] lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-[25%]">
+          <p
+            class="max-w-[60vw] text-balance text-white lg:max-w-[400px] lg:text-[24px]"
+            style={{
+              fontFamily: "Epilogue",
+              fontWeight: 700,
+            }}
+          >
+            We are designated to export Viet culture across the globe and help
+            international play a part in.
+            <span
+              style={{
+                marginTop: "1.5rem",
+                display: "block",
+                fontFamily: "Epilogue",
+                fontWeight: 300,
+              }}
+            >
+              Mr. Tran Huy Tung
+            </span>
+          </p>
+        </div>
+      </section>
+      
+
       <section class="relative mt-10 flex h-full w-full flex-col items-center justify-center overflow-hidden bg-black py-2">
         <Marquee className="[--duration:6s]">
           <p
@@ -167,7 +195,7 @@ const projects = [
 
       <section id="contact-form">
         <div class="relative my-10 mx-auto flex max-w-screen-xl flex-col gap-y-10 px-4 py-10"
-        style="background-image: url('src/assets/images/vietnam.png');
+        style="background-image: url('/vietnam.png');
         background-position: center;
         background-repeat: no-repeat;
           background-size: contain;

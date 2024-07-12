@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { render } from "@react-email/render";
 import { z } from "astro/zod";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ThanksEmail } from "./email-template";
 
