@@ -19,13 +19,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>		
 	</head>
-	<body>
+	<body style="background-image: url('src/assets/images/twc_background.webp');"></body>
 		<slot />
 		<Footer />
 	</body>
 </html>
 <style is:global>
 	html {
-		@apply bg-yellow-400 w-full h-screen overflow-x-hidden text-foreground;
+		@apply w-full h-screen overflow-x-hidden text-foreground scrollbar-hide;
 	}
 </style>
