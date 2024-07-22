@@ -40,7 +40,7 @@ const projects = [
 
 		<section class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-black py-2">
 			<Marquee className="[--duration:4s]">
-				<p class="mx-20 whitespace-nowrap font-gta text-[35px] font-semibold uppercase italic tracking-tighter text-white">
+				<p class="px-20 whitespace-nowrap font-gta text-[24px] lg:text-[35px] font-semibold uppercase italic tracking-tighter text-white">
 					A WALKING BILLBOARD
 				</p>
 			</Marquee>
@@ -58,7 +58,7 @@ const projects = [
 				<h1 class="font-gta text-[24px] md:text-[35px] font-bold lg:text-[50px]">
 					MARKETING
 				</h1>
-				<BikiniCatSVG className="absolute -bottom-4 right-0 lg:-right-10" />
+				<BikiniCatSVG className="absolute -bottom-4 -right-4 lg:-right-10" />
 				<SolutionSVG className="mx-auto" />
 			</div>
 		</section>
@@ -122,7 +122,7 @@ const projects = [
                         <div class="item-caption-wrapper">
                           <div class="item-caption">
                             <div class="item-title">
-                              <h3 class="font-gta md:text-lg font-bold">
+                              <h3 class="font-gta text-xs md:text-lg font-bold">
                                 {project.title}
                               </h3>
                             </div>
@@ -170,7 +170,7 @@ const projects = [
       <section class="relative mt-10 flex h-full w-full flex-col items-center justify-center overflow-hidden bg-black py-2">
         <Marquee className="[--duration:6s]">
           <p
-            class="whitespace-nowrap px-6 text-[35px] font-light italic tracking-tighter text-white"
+            class="whitespace-nowrap px-20 text-[24px] lg:text-[35px] font-light italic tracking-tighter text-white"
             style={{
               fontFamily: "Epilogue",
             }}
@@ -178,7 +178,7 @@ const projects = [
             We have the{" "}
             <span class="font-bold uppercase">MARKET FOR YOUR BRAND</span>{" "}
             <span
-              class="whitespace-nowrap px-6 text-[35px] font-light italic tracking-tighter text-white"
+              class="whitespace-nowrap px-6 text-[24px] lg:text-[35px] font-light italic tracking-tighter text-white"
               style={{
                 fontFamily: "Epilogue",
               }}
@@ -194,14 +194,18 @@ const projects = [
       </section>
 
       <section id="contact-form">
-        <div class="relative my-10 mx-auto flex max-w-screen-xl flex-col gap-y-10 px-4 py-10"
+        <div class="relative my-0 lg:my-10 mx-auto flex max-w-screen-xl flex-col gap-y-10 px-4 py-10"
         style="background-image: url('/vietnam.png');
         background-position: center;
         background-repeat: no-repeat;
           background-size: contain;
           opacity: 0.8;">
           <div>
-            <h3 class="text-[24px] uppercase">
+            <h3 class="text-[24px] uppercase"
+            style={{
+              fontFamily: "Epilogue",
+            }}
+            >
               Let&apos;s conquer
               <br />
               <span

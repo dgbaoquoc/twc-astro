@@ -133,4 +133,12 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  a {
+    @apply hover:underline underline-offset-2 hover:text-black/80;
+  }
+
+  canvas {
+    @apply !rounded-[40px];
+  }
 }
