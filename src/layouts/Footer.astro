@@ -1,43 +1,40 @@
 ---
-import { Clients} from '@/components/clients';
-import LogoImage from '@/assets/images/logo.png';
-import { Image } from 'astro:assets';
+import { Clients } from "@/components/clients";
+import LogoImage from "@/assets/images/logo.png";
+import { Image } from "astro:assets";
 
 import FB from "@/assets/images/socials/fb.png";
 import IG from "@/assets/images/socials/ig.png";
 import Threads from "@/assets/images/socials/threads.png";
 import Tiktok from "@/assets/images/socials/tiktok.png";
 
-
-import { contacts } from '@/config/site';
-
+import { contacts } from "@/config/site";
 
 export const socials = [
-  {
-    alt: "Instagram",
-    href: contacts.instagram,
-    src: IG,
-  },
-  {
-    alt: "Facebook",
-    href: contacts.facebook,
-    src: FB,
-  },
-  {
-    alt: "Threads",
-    href: contacts.threads,
-    src: Threads,
-  },
-  {
-    alt: "Tiktok",
-    href: contacts.tiktok,
-    src: Tiktok,
-  },
+	{
+		alt: "Instagram",
+		href: contacts.instagram,
+		src: IG,
+	},
+	{
+		alt: "Facebook",
+		href: contacts.facebook,
+		src: FB,
+	},
+	{
+		alt: "Threads",
+		href: contacts.threads,
+		src: Threads,
+	},
+	{
+		alt: "Tiktok",
+		href: contacts.tiktok,
+		src: Tiktok,
+	},
 ];
-
 ---
 <footer class="container py-10">
-  <section class="grid xs:grid-cols-1 sm:grid-cols-3">
+  <section class="relative grid xs:grid-cols-1 sm:grid-cols-3">
     <div class="lex flex-col gap-4">
       <div class="flex gap-1 flex-col md:flex-row md:gap-x-10">
         <a
@@ -71,12 +68,12 @@ export const socials = [
         class="shrink-0"
       />
     </div>
-    <div class="order-3 flex items-start sm:justify-end">
+    <div class="absolute right-0 -top-1"> 
       <Clients client:load>
     </div>
   </section>
 
-  <section class="mt-10 flex flex-col items-center justify-between gap-4 md:flex-row">
+  <section class="mt-6 lg:mt-10 flex flex-col items-center justify-between gap-4 md:flex-row">
     <p class="flex-1 font-gta text-xs font-light md:text-sm">
       © TWC your friendly Vietnamese Agency Since 2022 ✷
     </p>
