@@ -12,15 +12,22 @@
   document.addEventListener("DOMContentLoaded", () => {
     const splineViewer = document.getElementById("mySplineViewer");
     
-
     if (splineViewer) {
-      // Wait for the Spline Viewer to load
-      splineViewer.addEventListener("load-start", (e) => {
+      const applyStyles = () => {
         const spline = splineViewer?.shadowRoot?.getElementById("spline");
         const aTagSpline = splineViewer?.shadowRoot?.getElementById("logo");
         if(spline) spline.style.borderRadius = '40px'
         if(aTagSpline) aTagSpline.style.opacity = '0'
-      });
+      };
+
+      // Try to apply styles immediately
+      applyStyles();
+
+      // Also listen for the load event
+      splineViewer.addEventListener("load", applyStyles);
+
+      // Fallback: retry after a short delay
+      setTimeout(applyStyles, 1000);
     }
   });
 </script>
