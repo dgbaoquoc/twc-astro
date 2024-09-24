@@ -3,6 +3,8 @@ import Anh3 from "@/assets/images/footers/cham-cuu.png";
 import Anh2 from "@/assets/images/footers/hiphub.png";
 import Anh1 from "@/assets/images/footers/tp.png";
 import Anh5 from "@/assets/images/footers/twc-white.png";
+import Anh6 from "@/assets/images/footers/bala.png";
+import Anh7 from "@/assets/images/footers/hung-viet.png";
 import {
   Drawer,
   DrawerContent,
@@ -33,19 +35,41 @@ export function Clients() {
               LIKES OF:
             </p>
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] place-items-center gap-4">
-              <img className="shrink-0" src={Anh1.src} alt="TPBank" />
-              <img className="shrink-0" src={Anh2.src} alt="Hiphub" />
               <img
-                className="shrink-0"
+                className="shrink-0 w-32 h-32 object-contain"
+                src={Anh1.src}
+                alt="TPBank"
+              />
+              <img
+                className="shrink-0 w-32 h-32 object-contain"
+                src={Anh2.src}
+                alt="Hiphub"
+              />
+              <img
+                className="shrink-0 w-32 h-32 object-contain"
                 src={Anh3.src}
-                alt="Benh vien tram cuu"
+                alt="Bệnh viện châm cứu"
               />
               <img
-                className="shrink-0"
+                className="shrink-0 w-32 h-32 object-contain"
                 src={Anh4.src}
-                alt="Benh vien tram cuu 2"
+                alt="Bệnh viện châm cứu 2"
               />
-              <img className="shrink-0" src={Anh5.src} alt="TWC" />
+              <img
+                className="shrink-0 w-32 h-32 object-contain"
+                src={Anh5.src}
+                alt="TWC"
+              />
+              <img
+                className="shrink-0 w-32 h-32 object-contain"
+                src={Anh6.src}
+                alt="Kem Bala"
+              />
+              <img
+                className="shrink-0 w-32 h-32 object-contain"
+                src={Anh7.src}
+                alt="Bệnh viện Hưng Việt"
+              />
             </div>
           </div>
         </div>
