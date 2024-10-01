@@ -34,39 +34,39 @@ export function Clients() {
               TWC HAS HAD THE PLEASURE OF WORKING WITH SOME TOP NOTCH BRAND. THE
               LIKES OF:
             </p>
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] place-items-center gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-4">
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh1.src}
                 alt="TPBank"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh2.src}
                 alt="Hiphub"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh3.src}
                 alt="Bệnh viện châm cứu"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh4.src}
                 alt="Bệnh viện châm cứu 2"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh5.src}
                 alt="TWC"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh6.src}
                 alt="Kem Bala"
               />
               <img
-                className="shrink-0 w-32 h-32 object-contain"
+                className="shrink-0 w-24 h-24 object-contain"
                 src={Anh7.src}
                 alt="Bệnh viện Hưng Việt"
               />
